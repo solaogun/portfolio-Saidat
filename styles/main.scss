@@ -1,0 +1,54 @@
+@import './shared/fonts';
+
+//pages
+
+@import './index';
+@import './portfolios';
+
+//component
+
+@import './component/header';
+
+
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family:'Montserrat','Helvetica';
+  
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.absolute {
+    position: absolute;
+  }
+  .base-page {
+      padding: 150px, 0;
+      color: black;
+      min-height: 100vh;
+      background-color: #ecedee;
+
+      .page-header-title{
+          font-weight: bold;
+          display: inline-block;
+          margin-top: 100px;
+      }
+  }
+
+.self-typed {
+    font-size: 31px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+
+
+
+// .customClassFromFile{
+//     color: blue,
+// }

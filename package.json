@@ -3,13 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "nodemon server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "cross-env NODE_ENV=production&&node server.js"
   },
   "dependencies": {
+    "@auth0/nextjs-auth0": "^0.11.0",
+    "axios": "^0.20.0",
+    "bootstrap": "^4.5.2",
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "next": "9.5.3",
+    "next-routes": "^1.4.2",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-datepicker": "^3.3.0",
+    "react-dom": "16.13.1",
+    "react-hook-form": "^6.11.0",
+    "react-toastify": "^6.1.0",
+    "react-typed": "^1.2.0",
+    "reactstrap": "^8.6.0",
+    "sass": "^1.26.11",
+    "swr": "^0.3.5"
   }
 }
