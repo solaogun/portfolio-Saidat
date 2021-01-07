@@ -8,6 +8,7 @@ import { createPortfolio } from '@/action/portfolio'
 
 
 const PortfolioForm = ({ onSubmit, initialData = {} }) => {
+    console.log(onSubmit)
     const { register, handleSubmit, setValue } = useForm({ defaultValues: initialData });
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);

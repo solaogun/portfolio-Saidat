@@ -1,8 +1,8 @@
 const { default: axios } = require("axios")
 import { useState } from 'react'
-import { useApiHandler } from '@/action/index';
+import { useApiHandler, fetcher } from 'action';
 import useSWR from 'swr';
-import { fetcher } from '@/action'
+// import { fetcher } from '@/action'
 
 
 

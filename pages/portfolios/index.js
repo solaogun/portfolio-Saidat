@@ -46,7 +46,7 @@ const Portfolios = ({ pageProps: portfolios }) => {
   return (
     <BaseLayout user={dataU} loading={loadingU}>
       <BasePage
-        header="portfolios"
+        header="Portfolios"
         className="portfolio-page">
 
         <Row>
@@ -56,7 +56,7 @@ const Portfolios = ({ pageProps: portfolios }) => {
               onClick={() => {
                 router.push('/portfolios/[id]', `/portfolios/${portfolio._id}`)
               }}
-              md="4">
+              md="3">
               <PortfolioCard
                 portfolio={portfolio} >
 
@@ -91,45 +91,8 @@ const Portfolios = ({ pageProps: portfolios }) => {
 // it will create static page with dynamic data
 export async function getStaticProps() {
   const json = await new PortfolioApi().getAll()
-  const portfolios = json.data
+  const portfolios = json
   return { props: { portfolios } }
 }
 
-// Portfolios.getInitialProps=async()=>{
-//     let posts = [];
-//     try {
-//      const res = await axios.get('https://jsonplaceholder.typicode.com/posts')
-//      posts = res.data;
-//     }catch(e) {
-//         console.log(e);
-//     }
-//     return{posts: posts.slice(0,10)};
-// }
-
-
-
-export default Portfolios
-
-
-
-
-
-
-
-
-
-// import React from 'react';
-// import BaseLayouts from './components/layouts/BaseLayout';
-
-
-// class Portfolios extends React.Component{
-//     render(){
-//         return(
-//             <BaseLayouts>
-//             <h1>I am Portfolio page</h1>
-//             </BaseLayouts>
-//         )
-//     }
-// }
-
-// export default Portfolios;
+export default Portfolios;

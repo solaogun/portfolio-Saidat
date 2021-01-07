@@ -38,7 +38,7 @@ const Portfolio = ({ pageProps: portfolio }) => {
 //the function is executed at the build time
 export async function getStaticPaths() {
     const json = await new PortfolioApi().getAll()
-    const portfolios = json.data
+    const portfolios = json
 
     //get the path we want to pre-render based on portfolio id
     const paths = portfolios.map(portfolio => {
@@ -51,10 +51,13 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+
     const json = await new PortfolioApi().getById(params.id)
-    const portfolio = json.data
-    // console.log(params.id)
-    return { props: { portfolio } }
+    const portfolio = json
+    return {
+        props: { portfolio },
+        revalidate: 1
+    }
 }
 // {loading && <p>Loading data...</p>}
 //  {error && <div className="alert alert-danger">{error.message}</div>}

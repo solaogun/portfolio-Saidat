@@ -1,7 +1,9 @@
+
+
 import axios from 'axios'
 import BaseApi from './BaseApi'
 
-class PortfolioApi extends BaseApi {
+class BlogApi extends BaseApi {
 
     constructor(accessToken) {
         // this.config = {}
@@ -10,17 +12,9 @@ class PortfolioApi extends BaseApi {
         //         authorization: `Bearer ${accessToken}`
         //     }
         // }
-        super(accessToken, '/portfolios')
-        // this.apiUrl = process.env.PORTFOLIO_API_URL + '/portfolios'
+        super(accessToken, '/blogs')
+        // this.apiUrl = process.env.PORTFOLIO_API_URL + '/blogs'
     }
-
-    // getById(id) {
-    //     return axios.get(`${this.apiUrl}/${id}`)
-    // }
-
-    // getAll() {
-    //     return axios.get(this.apiUrl)
-    // }
 
     // getById(id) { all in BaseApi
     //     return axios.get(`${this.apiUrl}/${id}`)
@@ -31,15 +25,11 @@ class PortfolioApi extends BaseApi {
     //     return axios.post(this.apiUrl, data, this.config)
     // }
 
-    // update(id, data) {
+    // update(id, data) {     all in BaseApi
     //     return axios.patch(`${this.apiUrl}/${id}`, data, this.config)
     // }
-
-    delete(id) {
-        return axios.delete(`${this.apiUrl}/${id}`, this.config)
-    }
 
 
 }
 
-export default PortfolioApi
+export default BlogApi

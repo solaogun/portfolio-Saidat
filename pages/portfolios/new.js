@@ -24,7 +24,10 @@ const PortfolioNew = ({ user, loading: userLoading }) => {
             <BasePage header="Create portfolio">
                 <Row>
                     <Col md="8">
-                        <PortfolioForm />
+                        <PortfolioForm
+                            onSubmit={createPortfolio}
+                        // initialData={initialData}
+                        />
                         {error && <div className="alert alert-danger mt-2">{error}</div>}
                     </Col>
                 </Row>

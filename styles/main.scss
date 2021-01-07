@@ -4,6 +4,8 @@
 
 @import './index';
 @import './portfolios';
+@import './blogs';
+@import './about';
 
 //component
 
@@ -26,15 +28,18 @@ html, body {
     position: absolute;
   }
   .base-page {
-      padding: 150px, 0;
       color: black;
       min-height: 100vh;
       background-color: #ecedee;
+      margin-top: 100px;
+      padding: 150px, 0;
 
       .page-header-title{
           font-weight: bold;
           display: inline-block;
-          margin-top: 100px;
+          margin-top: 10px;
+          margin-left: 40%;
+          margin-bottom: 5px;
       }
   }
 
@@ -43,6 +48,16 @@ html, body {
     color: white;
     font-weight: bold;
     letter-spacing: 2px;
+}
+
+.avatar-box{
+    .img{
+        height: 50px;
+        border-radius: 50%;
+    }
+   .subtitle{
+       font-size: 14px;
+   }
 }
 
 

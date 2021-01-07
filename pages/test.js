@@ -1,27 +1,22 @@
+
+
 import BaseLayout from '@/components/layouts/BaseLayout';
 import BasePage from '@/components/BasePage';
 import { useGetUser } from '@/action/user'
-import { Row, Col } from 'reactstrap'
 
 
 
 
-
-
-const Cv = () => {
+const Test = () => {
     const { data, loading } = useGetUser()
     return (
         <BaseLayout user={data} loading={loading}>
             <BasePage>
-                <Row>
-                    <Col md={{ size: 8, offset: 2 }}>
-                        <iframe style={{ width: '100%', height: '800px' }} src="/Saidat's Resume.pdf " />
-                    </Col>
-                </Row>
+                <h1>I am about page</h1>
             </BasePage>
         </BaseLayout>
     )
 
 }
 
-export default Cv
+export default Test
