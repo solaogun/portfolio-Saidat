@@ -26,17 +26,19 @@ const About = () => {
 
     return (
         <BaseLayout user={data} loading={loading}>
-            <BasePage className="about-page">
+            <BasePage
+                title="About me - Saidat Adebule"
+                className="about-page">
                 <Row className="mt-5">
                     <Col md="6">
                         <div className="left-side">
-                            <h1 className={`title ${createFadeInClass}`}>Hello, Welcome</h1>
-                            <h4 className={`subtitle ${createFadeInClass}`}>To About Page</h4>
-                            <p className={`subsubTitle ${createFadeInClass}`}>Feel free to read short description about me.</p>
+                            <h1 className={`title ${createFadeInClass()}`}>Hello, Welcome</h1>
+                            <h4 className={`subtitle ${createFadeInClass()}`}>To About Page</h4>
+                            <p className={`subsubTitle ${createFadeInClass()}`}>Feel free to read short description about me.</p>
                         </div>
                     </Col>
                     <Col md="6">
-                        <div className={`${createFadeInClass}`}>
+                        <div className={`${createFadeInClass()}`}>
                             <p>My name is Saidat Bolanle and I am an experienced software engineer and freelance developer. </p>
                             <p>
                                 I have a Master's degree in Artificial Intelligence and several years of experience working

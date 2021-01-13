@@ -47,6 +47,7 @@ const Portfolios = ({ pageProps: portfolios }) => {
     <BaseLayout user={dataU} loading={loadingU}>
       <BasePage
         header="Portfolios"
+        title="Newest Portfolios - Saidat Adebule"
         className="portfolio-page">
 
         <Row>

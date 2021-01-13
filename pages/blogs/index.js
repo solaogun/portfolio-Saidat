@@ -24,6 +24,7 @@ const Blogs = ({ pageProps: { blogs } }) => {
                 <span className="subheading">Programming, travelling...</span>
             </Masthead>
             <BasePage
+                title="Newest Blog - Saidat Adebule"
                 className="blog-body">
                 <Row>
                     {

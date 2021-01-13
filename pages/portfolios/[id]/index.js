@@ -8,6 +8,7 @@ import axios from 'axios';
 // import { useRouter } from 'next/router'
 import { useGetUser } from '@/action/user'
 import PortfolioApi from '@/utils/lib/api/portfolios';
+import { formatDate } from 'helpers/functions'
 
 
 
@@ -17,11 +18,32 @@ const Portfolio = ({ pageProps: portfolio }) => {
     // const {data: Portfolio, error, loading} = useGetPostById(router.query.id);
     const { data: dataU, loading: loadingU } = useGetUser()
     return (
-        <BaseLayout user={dataU} loading={loadingU}>
-            <BasePage header="Portfolio Details">
-                {
+        <BaseLayout navClass="transparent" user={dataU} loading={loadingU}>
+            <BasePage
+                noWrapper
+                className="no-wrapper"
+                indexPage
+                title={`${portfolio.title} - Saidat Adebule`}
+                // header="Portfolio Details"
+                metaDescription={portfolio.description}
+            >
+                <div className="portfolio-detail">
+                    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+                        <main role="main" class="inner page-cover">
+                            <h1 class="cover-heading">{portfolio.title}</h1>
+                            <p class="lead dates">{formatDate(portfolio.startDate)} - {formatDate(portfolio.endDate) || 'Present'}</p>
+                            <p class="lead info mb-0">{portfolio.jobTitle} | {portfolio.company} | {portfolio.location}</p>
+                            <p class="lead">{portfolio.description}</p>
+                            <p class="lead">
+                                <a href={portfolio.companyWebsite} target="_" class="btn btn-lg btn-secondary">Visit Company</a>
+                            </p>
+                        </main>
+                    </div>
+                </div>
+
+                {/* {
                     JSON.stringify(portfolio)
-                }
+                } */}
             </BasePage>
         </BaseLayout>
 
@@ -52,10 +74,9 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
 
-    const json = await new PortfolioApi().getById(params.id)
-    const portfolio = json
+    const portfolio = await new PortfolioApi().getById(params.id)
     return {
-        props: { portfolio },
+        props: portfolio,
         revalidate: 1
     }
 }
